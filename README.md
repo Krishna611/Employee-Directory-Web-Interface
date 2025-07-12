@@ -98,17 +98,5 @@ Edit
 - [x] Simulates Freemarker usage
 
 ---
-## ✨ Screenshots
-
-### 💻 Desktop View
-![Desktop View](screenshots/desktop-view.png)
-
-### 📱 Mobile/Tablet View
-![Mobile View](screenshots/mobile-view.png)
-
-### 📝 Add/Edit Form
-![Form View](screenshots/form-view.png)
-
-
 ## 👨‍💻 Author
 **Krishna Chaithanya**  
