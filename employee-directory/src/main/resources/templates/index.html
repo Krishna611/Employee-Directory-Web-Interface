@@ -1,0 +1,69 @@
+<!-- File: src/main/resources/templates/index.ftlh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Employee Directory</h1>
+      <div class="top-bar">
+        <input type="text" id="searchInput" placeholder="Search by name or email...">
+        <button id="filterToggle">Filter</button>
+        <select id="sortBy">
+          <option value="firstName">Sort by First Name</option>
+          <option value="department">Sort by Department</option>
+        </select>
+        <button id="addNew">Add New Employee</button>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
+      </div>
+    </header>
+
+    <!-- Filter Sidebar -->
+    <aside id="filterPanel" class="hidden">
+      <h3>Filters</h3>
+      <label>Department:</label>
+      <input type="text" id="filterDept">
+      <label>Role:</label>
+      <input type="text" id="filterRole">
+      <button id="applyFilters">Apply</button>
+      <button id="clearFilters">Clear</button>
+    </aside>
+
+    <!-- Employee List -->
+    <div id="employeeList"></div>
+
+    <!-- Pagination -->
+    <div id="paginationControls"></div>
+
+    <!-- Add/Edit Form -->
+    <div id="employeeFormContainer" class="hidden">
+      <h2 id="formTitle">Add/Edit Employee</h2>
+      <form id="employeeForm">
+        <input type="hidden" id="employeeId">
+        <label>First Name:</label>
+        <input type="text" id="firstName" required>
+        <label>Last Name:</label>
+        <input type="text" id="lastName" required>
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <label>Department:</label>
+        <input type="text" id="department" required>
+        <label>Role:</label>
+        <input type="text" id="role" required>
+        <div class="form-buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="cancelForm">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/js/data.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

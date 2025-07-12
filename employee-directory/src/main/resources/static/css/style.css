@@ -1,0 +1,288 @@
+/* CSS VARIABLES */
+:root {
+  --bg: #f4f7fa;
+  --text: #333;
+  --card-bg: white;
+  --button-bg: #3498db;
+  --button-hover: #2980b9;
+  --button-text: white;
+  --form-bg: white;
+  --filter-bg: #ecf0f1;
+  --border-color: #ccc;
+  --card-glow: none;
+}
+
+body.dark {
+  --bg: #1e1e2f;
+  --text: #f5f5f5;
+  --card-bg: #2c2c3c;
+  --button-bg: #4a90e2;
+  --button-hover: #357ab7;
+  --button-text: white;
+  --form-bg: #2c2c3c;
+  --filter-bg: #3c3c4c;
+  --border-color: #555;
+  --card-glow: 0 0 8px rgba(74, 144, 226, 0.4);
+}
+
+/* RESET & BASE */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* FLOATING DARK MODE TOGGLE */
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 999;
+}
+
+#darkModeToggle:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+/* TOP BAR CONTROLS */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-bar input,
+.top-bar select,
+.top-bar button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  background-color: var(--form-bg);
+  color: var(--text);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.top-bar button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  cursor: pointer;
+}
+
+.top-bar button:hover {
+  background-color: var(--button-hover);
+}
+
+/* EMPLOYEE CARDS */
+.employee-card {
+  background-color: var(--card-bg);
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: var(--card-glow), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.employee-card:hover {
+  transform: scale(1.02);
+}
+
+.employee-card h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.employee-card p {
+  margin: 4px 0;
+}
+
+.employee-card button {
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.employee-card button:first-of-type {
+  background-color: #e67e22;
+}
+
+.employee-card button:last-of-type {
+  background-color: #e74c3c;
+}
+
+.employee-card button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* FORM STYLING */
+#employeeFormContainer {
+  background-color: var(--form-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+#employeeFormContainer h2 {
+  margin-top: 0;
+}
+
+#employeeForm label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#employeeForm input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--form-bg);
+  color: var(--text);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* FORM BUTTONS */
+.form-buttons {
+  margin-top: 15px;
+}
+
+.form-buttons button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #2ecc71;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #95a5a6;
+}
+
+.form-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* FILTER PANEL */
+#filterPanel {
+  background-color: var(--filter-bg);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+#filterPanel.hidden {
+  display: none;
+}
+
+/* PAGINATION */
+#paginationControls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#paginationControls button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#paginationControls button.active {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-hover);
+}
+
+#paginationControls button:hover {
+  transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .employee-card {
+    padding: 12px;
+  }
+
+  #employeeFormContainer {
+    padding: 16px;
+  }
+
+  #paginationControls {
+    justify-content: center;
+  }
+}
