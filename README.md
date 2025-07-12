@@ -1,4 +1,4 @@
-# 👩‍💼 AJACKUS Employee Directory
+# 👩‍💼  Employee Directory
 
 This is a simple, responsive **Employee Directory** web application built using **HTML**, **CSS**, and **Vanilla JavaScript**, with mock Freemarker template structure. It allows users to manage employee records — including viewing, adding, editing, deleting, searching, sorting, and paginating — all using mock data in the browser (no backend required).
 
